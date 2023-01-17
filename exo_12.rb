@@ -1,13 +1,15 @@
-p "Quelle est votre année de naissance ?"
-year = gets.chomp.to_i
+p "Quelle est ton âge ?"
+age = gets.chomp.to_i
 
-age = 0
-while year <= 2023 do
-  current = 2023 - year
-  if (current) == age
-    p "Il y a #{2023 - year} ans, tu avais la moitié de ton âge !"
+current_year = 2023
+birth = current_year - age
+year = current_year - birth
+
+age.times do |i|
+  p "Il y a #{year} ans, tu avais #{i} ans."
+  if year == i 
+    p "Il y a #{year} ans, tu avais la moitié de ton âge !"
   end
-    p "Il y a #{2023 - year} ans, tu avais #{age} ans"
-  year += 1
-  age += 1
+  age -= 1
+  year -= 1
 end
